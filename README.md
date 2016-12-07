@@ -1,9 +1,7 @@
 # openresty Cookbook
 
-TODO: Enter the cookbook description here.
+This will install openresty on RHEL and Debian based distros
 
-e.g.
-This cookbook makes your favorite breakfast sandwich.
 
 ## Requirements
 
@@ -12,7 +10,8 @@ TODO: List your cookbook requirements. Be sure to include any requirements this 
 e.g.
 ### Platforms
 
-- SandwichOS
+- RHEL
+- Debian
 
 ### Chef
 
@@ -20,29 +19,15 @@ e.g.
 
 ### Cookbooks
 
-- `toaster` - openresty needs toaster to brown your bagel.
+- openresty
 
 ## Attributes
 
-TODO: List your cookbook attributes here.
-
-e.g.
-### openresty::default
-
-<table>
-  <tr>
-    <th>Key</th>
-    <th>Type</th>
-    <th>Description</th>
-    <th>Default</th>
-  </tr>
-  <tr>
-    <td><tt>['openresty']['bacon']</tt></td>
-    <td>Boolean</td>
-    <td>whether to include bacon</td>
-    <td><tt>true</tt></td>
-  </tr>
-</table>
+node[:openresty_version]  default ==> 'openresty-1.11.2.2'
+node[:openresty_prefix] default ==> '/usr/local/openresty'
+node[:pcre_jit] default ==> 'true'
+node[:luajit] default ==> 'true'
+node[:http_ssl] default ==> 'true'
 
 ## Usage
 
@@ -76,5 +61,5 @@ e.g.
 
 ## License and Authors
 
-Authors: TODO: List authors
+Authors: Atif Rizwan
 
