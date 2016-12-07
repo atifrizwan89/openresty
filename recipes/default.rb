@@ -10,16 +10,16 @@
 ##########Deault Attributes should go in attributes/default.rb############
 node[:openresty_version] = 'openresty-1.11.2.2'
 node[:openresty_prefix] = '/usr/local/openresty'
-node[:pcre-jit] = 'true'
+node[:pcre_jit] = 'true'
 node[:luajit] == 'true'
 node[:http_ssl] == 'true'
-node[:with_pcre-jit] = ''
+node[:with_pcre_jit] = ''
 node[:with_luajit] = ''
 node[:with_http_ssl] ''
 
 
-if node[:pcre-jit] == 'true'
-node[:with_pcre-jit] = '--with-pcre-jit'
+if node[:pcre_jit] == 'true'
+node[:with_pcre_jit] = '--with-pcre-jit'
 
 if node[:luajit] == 'true'
 node[:with_luajit] = '--with-luajit'
@@ -63,7 +63,7 @@ bash "install_with_modules" do
 user "root"
   cwd "/opt/#{node[:openresty_version]}"
   code <<-EOH
-  ./configure --prefix=#{node[:openresty_prefix]} #{node[:with_pcre-jit]} #{node[:with_luajit]} #{node[:with_http_ssl]}
+  ./configure --prefix=#{node[:openresty_prefix]} #{node[:with_pcre_jit]} #{node[:with_luajit]} #{node[:with_http_ssl]}
   make
   make install
   echo "export PATH=#{node[:openresty_prefix]}/bin:#{node[:openresty_prefix]}/nginx/sbin:$PATH" >> ~/.bash_rc
