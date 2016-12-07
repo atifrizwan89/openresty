@@ -23,11 +23,11 @@ e.g.
 
 ## Attributes
 
-node[:openresty_version]  default ==> 'openresty-1.11.2.2'
-node[:openresty_prefix] default ==> '/usr/local/openresty'
-node[:pcre_jit] default ==> 'true'
-node[:luajit] default ==> 'true'
-node[:http_ssl] default ==> 'true'
+- node[:openresty_version] default ==> 'openresty-1.11.2.2'
+- node[:openresty_prefix] default ==> '/usr/local/openresty'
+- node[:pcre_jit] default ==> 'true'
+- node[:luajit] default ==> 'true'
+- node[:http_ssl] default ==> 'true'
 
 ## Usage
 
